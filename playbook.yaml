@@ -1,0 +1,28 @@
+- name: Deploy and run Node.js application
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Clone Node.js application repository
+      git:
+        repo: https://github.com/AhmedNageh08/node-express-hello-world.git
+        dest: /opt/node-express-hello-world
+        version: master
+        force: yes
+
+    - name: Install npm package
+      apt:
+        name: npm
+        state: present
+        
+    - name: Install App dependencies
+      command: npm install
+      args:
+        chdir: /opt/node-express-hello-world
+
+    - name: Start Node.js application in detached mode
+      shell: >
+        cd /opt/node-express-hello-world && 
+        nohup npm start &> /dev/null &
+        echo $! > /var/run/node-express-hello-world.pid
+
