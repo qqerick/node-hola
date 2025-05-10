@@ -19,7 +19,7 @@ make sure you have running kubernetes cluster on cloud or on hosted locally (kin
 ## Install liknkerd 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-linkerd-with-kubernetes 
 ## Install Linkerd-SMI extension for canary deployment 
-https://linkerd.io/2.15/tasks/linkerd-smi/#install-the-linkerd-smi-extension 
+https://linkerd.io/2.15/tasks/linkerd-smi/#install-the-linkerd-smi-extension   
 
 # Usage : 
 
